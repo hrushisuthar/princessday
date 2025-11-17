@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Happy Princess Day — 18 Nov</title>
+  <style>
+    :root{
+      --bg:#fff8ff;
+      --accent:#ff8edb;
+      --muted:#6b6b6b;
+      --card: rgba(255,255,255,0.75);
+      --glass: rgba(255,255,255,0.35);
+      font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    html,body{height:100%;margin:0;background:#fceaff;color:#222}
+    .wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;box-sizing:border-box}
+
+    .card{width:100%;max-width:920px;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,0.12);overflow:hidden;background:var(--card);backdrop-filter:blur(6px)}
+
+    /* Header video */
+    .hero{position:relative;height:350px; /* reduced video display size slightly */ /* increased hero/princess background size */display:flex;align-items:center;justify-content:center;overflow:hidden}
+    .hero video{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);min-width:120%;min-height:120%;object-fit:cover;filter:brightness(.9) saturate(1.05)}
+    .overlay{position:relative;z-index:2;padding:20px;text-align:center;color:#000}
+    .title{font-size:34px;font-weight:700;text-shadow:0 6px 18px rgba(0,0,0,0.4);margin:0}
+    .subtitle{margin-top:8px;font-size:16px;opacity:.95}
+
+    /* content area */
+    .content{display:grid;grid-template-columns:1fr 360px;gap:18px;padding:18px}
+    .left{padding:8px}
+
+    /* typed writer */
+    .writer{font-size:20px;line-height:1.45;color:var(--muted);min-height:72px}
+    .typed{display:inline;color:var(--accent);font-weight:700}
+
+    /* scrolling pics / carousel */
+    .carousel{margin-top:18px;overflow:hidden;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,248,255,0.6));padding:8px}
+    .carousel-track{display:flex;gap:10px;animation:scroll 20s linear infinite}
+    .carousel-item{flex:0 0 300px;height:300px; /* upgraded image size from small to medium square */border-radius:10px;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,0.08)}
+    .carousel-item img{width:100%;height:100%;object-fit:cover;display:block}
+    @keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+    /* right column */
+    .right{display:flex;flex-direction:column;gap:12px;padding:8px}
+    .card-small{background:var(--glass);padding:12px;border-radius:12px}
+    .final-msg{display:none;align-items:center;justify-content:center;flex-direction:column;gap:12px;padding:18px;text-align:center}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#ffb3e6);color:#fff;font-weight:700;text-decoration:none;border:0;cursor:pointer}
+
+    footer{padding:12px;text-align:center;color:var(--muted);font-size:13px}
+
+    /* responsive */
+    @media (max-width:880px){
+      .content{grid-template-columns:1fr}
+      .hero{height:240px}
+    }
+  </style>
+</head>
+<body>
+  <!--
+    HOW TO USE:
+    1) Save this file as `index.html` or `princess_day_website.html` in a folder.
+    2) Put your video file named `video.mp4` in the same folder (or change the <source> src to your filename).
+    3) Replace the placeholder images (img1.jpg, img2.jpg...) with your pictures in the same folder.
+    4) Open this file in Chrome/Edge/Firefox (double-click) or host on GitHub Pages to share.
+    5) Click the "Share/Send" button to open your email client prefilled with message.
+
+    WANT CUSTOM TEXT, COLORS OR IMAGES? Tell me the exact text and 3-6 photos and I'll update it.
+  -->
+
+  <div class="wrap">
+    <div class="card" id="stage">
+      <div class="hero">
+        <!-- replace video.mp4 with your uploaded video file name -->
+        <video id="bgvid" autoplay muted loop playsinline>
+          <source src="video.mp4" type="video/mp4">
+          <!-- fallback image if video missing -->
+        </video>
+        <div class="overlay">
+          <h1 class="title"><i>Happy Princess Day — 18 November</i></h1>
+          <div class="subtitle">A Small Surprise, Made Just For You 💖</div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="left">
+          <div class="writer"> <span id="typed">Dear Princess, </span><span class="typed" id="typed-more"></span></div>
+
+          <div class="carousel" aria-hidden="false">
+            <div class="carousel-track" id="carousel">
+              <!-- Replace these images with your pictures: img1.jpg, img2.jpg ... -->
+               <div class="carousel-item"><img src="img1.jpg" alt="photo1"></div>
+              <div class="carousel-item"><img src="img2.png" alt="photo2"></div>
+              <div class="carousel-item"><img src="img3.png" alt="photo3"></div>
+              <div class="carousel-item"><img src="img4.png" alt="photo4"></div>
+              <div class="carousel-item"><img src="img5.png" alt="photo5"></div>
+              <div class="carousel-item"><img src="img6.jpg" alt="photo5"></div>
+              <!-- duplicate items so the scroll loops smoothly -->
+              <div class="carousel-item"><img src="img1.jpg" alt="photo1"></div>
+              <div class="carousel-item"><img src="img2.png" alt="photo2"></div>
+              <div class="carousel-item"><img src="img3.png" alt="photo3"></div>
+              <div class="carousel-item"><img src="img4.png" alt="photo4"></div>
+              <div class="carousel-item"><img src="img5.png" alt="photo5"></div>
+              <div class="carousel-item"><img src="img6.jpg" alt="photo5"></div>
+            </div>
+          </div>
+
+          <div style="margin-top:14px;font-size:13px;color:var(--muted)">
+            <h1>Her Description 💖⭐</h1>
+            <h3><i>A girl with soft, expressive eyes — eyes that speak more than words. <br> A gentle smile, natural and honest, not forced. <br> Clean, simple beauty — she doesn’t need filters.</i></h3>
+            <h2>TOGETHER BONDING STORY ⭐  </h2>
+            <h3><i>“Some connections don’t start with words…<br>they start with a follow request, a reel,and a feeling that this person might be something more.”</i></h3>
+          </div>
+        </div>
+
+      </div>
+
+      <footer>Made with care — HOPE YOU LIKE IT 💖</footer>
+    </div>
+  </div>
+
+<script>
+  // Typed writer effect
+  const lines = [
+    "You entered my life so quietly, yet you filled it with peace I never asked for.",
+    "Your presence feels like a slow sunrise — warm, gentle, and impossible to ignore.",
+    "I don’t know how, but you became the sweetest part of my days.",
+    "Every reel you sent felt like a little step closer to you.",
+    ]
+  let li=0, ch=0;
+  const typedMore = document.getElementById('typed-more');
+  function type(){
+    if(li>=lines.length) li=0;
+    const line = lines[li];
+    if(ch<line.length){
+      typedMore.textContent += line[ch++];
+      setTimeout(type, 45);
+    } else {
+      setTimeout(()=>{
+        // erase
+        const eraseInterval = setInterval(()=>{
+          if(typedMore.textContent.length>0){ typedMore.textContent = typedMore.textContent.slice(0,-1);} else { clearInterval(eraseInterval); li++; ch=0; setTimeout(type,500);} }, 30);
+      },1500);
+    }
+  }
+  type();
+  </script>
+</body>
+</html>
